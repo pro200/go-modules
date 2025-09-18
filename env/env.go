@@ -78,6 +78,8 @@ func GetInt(key string) int {
 }
 
 func GetFloat(key string) float64 {
-	r := GetInt(key)
-	return float64(r)
+	r := Get(key)
+	floatVal, _ := strconv.ParseFloat(r, 64)
+
+	return floatVal
 }
